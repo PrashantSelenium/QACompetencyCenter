@@ -1,4 +1,4 @@
-package com.tpg.testcases;
+package com.tpg.mobilechrome;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -10,10 +10,11 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 /**
- * This class automates chrome browser through appium. You need to set the path of the chrome driver.
+ * This class automates Android Chrome browser through appium. You need to place ChromeDriver on your 
+ * system Path for windows machine.
  * @author Khushboo.kaur
  */
-public class SeleniumChromeDriver /*extends BaseAppiumTestCaseClass*/ {
+public class SeleniumChromeDriver {
 	
 	public static void main(String[] args) throws MalformedURLException{
 		DesiredCapabilities  capabilities = new DesiredCapabilities();

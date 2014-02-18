@@ -1,4 +1,4 @@
-package com.tpg.testcases;
+package com.tpg.mobilechrome;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 /**
- * This class is automating chrome browser on android emulator. You need to set chromedriver on system path.
+ * This class is automating Chrome browser on android emulator. You need to place ChromeDriver on system path.
  * @author Khushboo.kaur
  *
  */
@@ -29,10 +29,10 @@ public class ChromiumTest {
 	
 	public static void main(String[] args) throws MalformedURLException {
 	
-		new ChromiumTest().seleniumBrowserScreenShot();
+		new ChromiumTest().init();
 	}
 
-	private void seleniumBrowserScreenShot() {
+	private void init() {
 		maxPageHeight=height_covered=image_number=last_screenshot_size=0;
 		
 		imageslist=new ArrayList<BufferedImage>();
@@ -47,7 +47,7 @@ public class ChromiumTest {
 		//driver.get("http://developer.android.com/index.html");
 		driver.get("http://flipkart.com");
 		try {
-			scrollPage(driver);
+			seleniumCaptureBrowserScreenShot(driver);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -55,7 +55,7 @@ public class ChromiumTest {
 		}
 	}
 
-	private void scrollPage(WebDriver driver) throws InterruptedException, IOException {
+	private void seleniumCaptureBrowserScreenShot(WebDriver driver) throws InterruptedException, IOException {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		
 		Long pageheight1=(Long)js.executeScript("return window.innerHeight");
@@ -139,7 +139,4 @@ public class ChromiumTest {
 		System.out.println("Sets the Browser Size");
 		
 	}
-	
-//	http://selenium-tutorial.blogspot.in/2013/02/scroll-page-webdriver.html
-//	http://stackoverflow.com/questions/9443067/scrolling-using-selenium-webdriver
 }
