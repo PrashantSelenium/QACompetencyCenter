@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 /**
  * This class automates Android Chrome browser through appium. You need to place ChromeDriver on your 
- * system Path for windows machine.
+ * system Path for windows machine. Start Appium server before executing this class.
  * @author Khushboo.kaur
  */
 public class SeleniumChromeDriver {
@@ -24,6 +24,7 @@ public class SeleniumChromeDriver {
 		capabilities.setCapability(CapabilityType.VERSION, "4.3");
 		capabilities.setCapability(CapabilityType.PLATFORM, "WINDOWS");
 		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		driver.get("http://www.yahoo.com");
+//		driver.get("http://www.yahoo.com");
+		new CaptureBrowserScreenShot().init(driver);
 	}
 }
