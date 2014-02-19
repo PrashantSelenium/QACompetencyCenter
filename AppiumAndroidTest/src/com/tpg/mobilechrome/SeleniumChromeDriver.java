@@ -18,13 +18,19 @@ public class SeleniumChromeDriver {
 	
 	public static void main(String[] args) throws MalformedURLException{
 		DesiredCapabilities  capabilities = new DesiredCapabilities();
-		capabilities.setCapability("device","Android");
+//		capabilities.setCapability("device","Android");
 		capabilities.setCapability("app", "Chrome");
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
-		capabilities.setCapability(CapabilityType.VERSION, "4.3");
+//		capabilities.setCapability(CapabilityType.VERSION, "4.3");
 		capabilities.setCapability(CapabilityType.PLATFORM, "WINDOWS");
 		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-//		driver.get("http://www.yahoo.com");
-		new CaptureBrowserScreenShot().init(driver);
+//		String url="http://www.yahoo.com");
+		
+		String url="http://ebay.in";
+		//String url="http://developer.android.com/index.html";
+		//String url="http://www.microsoft.com/en-us/default.aspx";
+		//String url="http://timesofindia.indiatimes.com/";
+		//String url="http://godaddy.com";
+		new CaptureBrowserScreenShot().init(driver, url);
 	}
 }
